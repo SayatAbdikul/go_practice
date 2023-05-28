@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	post "github.com/SayatAbdikul/go_practice/postRequests"
 	"github.com/SayatAbdikul/go_practice/server"
+	user "github.com/SayatAbdikul/go_practice/userRequests"
 	"github.com/gin-gonic/gin"
 )
 
@@ -13,6 +13,7 @@ func main() {
 	// Connected successfully
 	fmt.Println("Connected to MongoDB!")
 	router := gin.Default()
-	router.POST("/reg_user", post.RegUser)
+	router.POST("/reg_user", user.RegUser)
+	router.PUT("/update_user/:id", user.UpdateUser)
 	router.Run(":6666")
 }

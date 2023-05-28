@@ -1,4 +1,4 @@
-package postrequests
+package userRequests
 
 import (
 	"context"
@@ -10,10 +10,10 @@ import (
 )
 
 type User struct {
-	Name     string `json:"name"`
-	Login    string `json:"login"`
-	Password string `json:"password"`
-	Age      int    `json:"age"`
+	Name     string `json:"name" bson:"name"`
+	Login    string `json:"login" bson:"login"`
+	Password string `json:"password" bson:"password"`
+	Age      int    `json:"age" bson:"age"`
 }
 
 func RegUser(c *gin.Context) {
