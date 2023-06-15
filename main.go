@@ -14,6 +14,7 @@ func main() {
 	fmt.Println("Connected to MongoDB!")
 	router := gin.Default()
 	router.POST("/reg_user", user.RegUser)
+	router.GET("/get_user/:id", user.GetUser)
 	router.PUT("/update_user/:id", user.UpdateUser)
-	router.Run(":6666")
+	router.Run(":9999")
 }
